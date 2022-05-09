@@ -15,6 +15,7 @@ title: tailwindcss
 ---
 class: text-center flex flex-col justify-center
 highlighter: shiki
+background: /assets/imgs/back.jpeg
 ---
 
 # what is tailwindcss?
@@ -107,6 +108,13 @@ class: text-center flex flex-col justify-center
 </v-click>
 
 ---
+layout: iframe
+# the web page source
+url: http://localhost:3000/hero
+
+---
+
+---
 
 <v-click>
 
@@ -141,78 +149,108 @@ class: text-center flex flex-col justify-center
 
 ---
 
-layout: iframe
+# 与原子化CSS相处的一年半（https://johnpolacek.medium.com/by-the-numbers-a-year-and-half-with-atomic-css-39d75b1263b4）
+<v-click>
 
-# the web page source
+1. 2013–07–23
 
-## url: http://localhost:3000/hero
+  提交数:<span class="text-green-300">575</span>、 仓库大小:<span class="text-green-300">445MB</span>、css文件大小:<span class="text-red-400">109.4kb* (41 css files)</span>
+  
+</v-click>
+
+<v-click>
+
+2. 2013–09–03
+
+>  在项目中实施响应式网页设计，使得项目布局就能适应所有的屏幕尺寸
+
+  提交数:<span class="text-green-300">925</span>、 仓库大小:<span class="text-green-300">465MB</span>、css文件大小:<span class="text-red-400">123.1kb (41 css files)</span>
+  
+</v-click>
+<v-click>
+
+3. 2013–09–07 
+> 将css文件合并为一个文件，减少请求http请求，对css文件进行缓存
+
+提交数:<span class="text-green-300">1500</span>、 仓库大小:<span class="text-green-300">467MB</span>、css文件大小:<span class="text-red-400">105.6kb (1 file)</span>
+
+</v-click>
+<v-click>
+
+4. 2014–09–15 
+> 随着时间的推移，项目添加了更多功能，例如集成票务、响应式赞助广告单元、仪表板报告和一些其他功能。项目中 CSS 继续增长。
+
+提交数:<span class="text-green-300">4812</span>、 仓库大小:<span class="text-green-300">482MB</span>、css文件大小:<span class="text-red-400">151.2kb</span>
+
+</v-click>
+<v-click>
+
+> 从上面可以看到，使用传统的语义 CSS 方法一年后，项目的 CSS 增长了 43%，而 仓库 大小增长了 3%
+
+</v-click>
+
+<v-click>
+
+5. 2015–05–06 
+> 在接下来的几个月里，除了常规的产品开发外，我们公司还进行了品牌重塑。我们产品的外观和感觉取得了飞跃，但我们的核心 CSS 继续增长。
+
+提交数:<span class="text-green-300">7726</span>、 仓库大小:<span class="text-green-300">485MB</span>、css文件大小:<span class="text-red-400">183.2kb</span>
+
+</v-click>
 
 ---
 
-# Navigation
+<v-click>
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+6. 2015–10–09
+> 项目的 CSS 以不可持续的速度增长。我剔除未使用的样式，尽可能优化。我将管理风格与我们面向客户的核心产品分开。到 10 月，已经取得了一些进展
 
-### Keyboard Shortcuts
+提交数:<span class="text-green-300">9692</span>、 仓库大小:<span class="text-green-300">487MB</span>、css文件大小:<span class="text-red-400">116.8kb</span>
 
-|                                                    |                             |
-| -------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                | next animation or slide     |
-| <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                      | previous slide              |
-| <kbd>down</kbd>                                    | next slide                  |
+</v-click>
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
+<v-click>
 
-<img
-  v-click
-  class="absolute opacity-50 -bottom-9 -left-7 w-80"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
+> 不错，但我想低于 100kb。我查看了我们的css代码，一遍又一遍地看到相同的属性声明。因此我研究`原子化css`,并在项目中落地。
 
-<p v-after class="absolute transform bottom-23 left-45 opacity-30 -rotate-10">Here!</p>
+</v-click>
+
+<v-click>
+
+7. 2015–10–18
+> 将我们的 CSS 重构为`原子化css`使得`css`大小减少了 <b class="text-green-400">30%</b>,它本来可以更小，但我们留下了一些遗留样式以供以后重构。
+
+提交数:<span class="text-green-300">9830</span>、 仓库大小:<span class="text-green-300">491MB</span>、css文件大小:<span class="text-red-400">81.3kb</span>
+
+</v-click>
+
+<v-click>
+
+8. 2017–05–30
+> 一年半之后，尽管每两周发布一次新特性和功能，但随着我们逐步淘汰旧样式，我们的 CSS 实际上不仅没有增加，而且还缩小了 10%。
+
+提交数:<span class="text-green-300">20257</span>、 仓库大小:<span class="text-green-300">593MB</span>、css文件大小:<span class="text-red-400">72.7kb</span>
+<img class="h-80" src="/assets/imgs/css_grow.png"/>
+
+</v-click>
 
 ---
 
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
+<v-click>
 
----
+# 为什么一年半之后项目的CSS文件不升反降呢？
 
-# Code
+</v-click>
+<v-click>
 
-Use code snippets and get the highlighting directly![^1]
+> 例如，我们添加了一个新功能，座位管理，它允许我们的客户将客人拖放到他们活动的餐桌分配中。这是一个带有新 UI 的新视图。没有新的 CSS。我们的设计系统已经有了我们需要的样式，而我们之前的功能已经使用到了这些css，所以我们编写这个功能并没有增加新的CSS代码
 
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number;
-  firstName: string;
-  lastName: string;
-  role: string;
-}
+</v-click>
 
-function updateUser(id: number, update: User) {
-  const user = getUser(id);
-  const newUser = { ...user, ...update };
-  saveUser(id, newUser);
-}
-```
+<img v-click class="mt-4" src="/assets/imgs/feature.gif"/>
 
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
 
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
 
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
 
 ---
 
