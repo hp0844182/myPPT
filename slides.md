@@ -4,7 +4,7 @@ background: /assets/imgs/back.jpeg
 class: text-center
 highlighter: shiki
 lineNumbers: true
-canvasWidth: 1340
+canvasWidth: 1640
 drawings:
   persist: false
 title: tailwindcss
@@ -23,129 +23,6 @@ background: /assets/imgs/back.jpeg
 <p v-click class="block" >Tailwind CSS 是一个高度可定制的基础层 CSS 框架，它提供了构建定制化设计所需的所有构建块，而无需重新覆盖任何内建于框架中的设计风格。</p>
 
 <p v-click class="block" > 简而言之 <b>tailwindcss</b> 其实就是一个高度可定制的原子化css框架。</p>
-
----
-class: text-center flex flex-col justify-center
----
-# why Tailwindcss?
-
----
-
-<Card/>
-
-<style>
-  pre.shiki-container{
-    @apply mt-3;
-    max-height:400px;
-    overflow:scroll;
-  }
-</style>
-<v-click>
-
-## 一、传统方式
-```html
-<div class="chat-notification">
-  <div class="chat-notification-logo-wrapper">
-    <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
-  </div>
-  <div class="chat-notification-content">
-    <h4 class="chat-notification-title">ChitChat</h4>
-    <p class="chat-notification-message">You have a new message!</p>
-  </div>
-</div>
-
-<style>
-  .chat-notification {
-    display: flex;
-    max-width: 24rem;
-    margin: 0 auto;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-  .chat-notification-logo-wrapper {
-    flex-shrink: 0;
-  }
-  .chat-notification-logo {
-    height: 3rem;
-    width: 3rem;
-  }
-  .chat-notification-content {
-    margin-left: 1.5rem;
-    padding-top: 0.25rem;
-  }
-  .chat-notification-title {
-    color: #1a202c;
-    font-size: 1.25rem;
-    line-height: 1.25;
-  }
-  .chat-notification-message {
-    color: #718096;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-</style>
-```
-</v-click>
-
----
-
-<h2 class="mb-4 ">二、Tailwindcss</h2>
-<v-click>
-
-```html
-<div class="flex items-center max-w-sm p-6 mx-auto space-x-4 bg-white shadow-lg rounded-xl">
-  <div class="shrink-0">
-    <img class="w-12 h-12" src="/img/logo.svg" alt="ChitChat Logo">
-  </div>
-  <div>
-    <div class="text-xl font-medium text-black">ChitChat</div>
-    <p class="text-slate-500">You have a new message!</p>
-  </div>
-</div>
-```
-</v-click>
-
----
-layout: iframe
-# the web page source
-url: http://localhost:3000/hero
-
----
-
----
-
-<v-click>
-
-- 🤔 **不再需要浪费精力去起类名** - 不再需要先起个`sidebar-inner-wrapper`类名再去编写样式。也不再需要为实际上只是一个 flex 容器的东西去想一个完美抽象名称而苦恼。
-
-</v-click>
-<v-click>
-
-- 🛑 **CSS文件将停止增长** - 传统方式下、每次新增功能时，CSS文件体积都会增大。而使用`tailwindcss`所有的class都将被复用。
-
-</v-click>
-<v-click>
-
-<img class="h-96" src="/assets/imgs/grow.png"/>
-
-</v-click>
-<v-click>
-
-- ⛑ **更改样式更加安全** - 传统方式下修改样式需要注意是否会影响其他组件，而`tailwindcss`就是在当前元素上添加/移除class，影响范围仅限在当前组件。
-
-</v-click>
-
-<v-click>
-
-- ⛑ **在设计规范下约束样式编写** - 使用tailwindcss是从一个预定义的设计系统中选择样式，这使开发人员更容易建立视觉上一致的UI，新人总容易弄出一种大红大绿的新人风格网页，有了一些约束就很难出现这种很糟糕的色彩控制,另外，有了 text-lg 此类，一个页面上就不会出现几十种参差不同的字体大小
-
-</v-click>
-
-<br>
-<br>
-
 
 ---
 
@@ -251,6 +128,173 @@ url: http://localhost:3000/hero
 
 
 
+---
+class: text-center flex flex-col justify-center
+---
+# why Tailwindcss?
+
+---
+
+<Card/>
+
+
+
+
+<div grid="~ cols-2 gap-2" m="-t-2">
+
+<div>
+<v-click>
+
+<h3>传统方式</h3>
+
+```html
+<div class="chat-notification">
+  <div class="chat-notification-logo-wrapper">
+    <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
+  </div>
+  <div class="chat-notification-content">
+    <h4 class="chat-notification-title">ChitChat</h4>
+    <p class="chat-notification-message">You have a new message!</p>
+  </div>
+</div>
+
+<style>
+  .chat-notification {
+    display: flex;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .chat-notification-logo-wrapper {
+    flex-shrink: 0;
+  }
+  .chat-notification-logo {
+    height: 3rem;
+    width: 3rem;
+  }
+  .chat-notification-content {
+    margin-left: 1.5rem;
+    padding-top: 0.25rem;
+  }
+  .chat-notification-title {
+    color: #1a202c;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+  .chat-notification-message {
+    color: #718096;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
+```
+</v-click>
+
+</div>
+
+<div>
+
+<v-click>
+
+<h3>tailwindcss</h3>
+
+```html
+<div class="flex items-center max-w-sm p-6 mx-auto space-x-4 bg-white shadow-lg rounded-xl">
+  <div class="shrink-0">
+    <img class="w-12 h-12" src="/img/logo.svg" alt="ChitChat Logo">
+  </div>
+  <div>
+    <div class="text-xl font-medium text-black">ChitChat</div>
+    <p class="text-slate-500">You have a new message!</p>
+  </div>
+</div>
+```
+
+</v-click>
+</div>
+
+</div>
+
+
+<style>
+  pre.shiki-container{
+    @apply mt-3;
+    max-height:400px;
+    overflow:scroll;
+  }
+</style>
+
+---
+layout: iframe
+# the web page source
+url: http://localhost:3000/hero
+
+---
+
+---
+
+<v-click>
+
+- 🤔 **不再需要浪费精力去起类名** - 不再需要先起个`sidebar-inner-wrapper`类名再去编写样式。也不再需要为实际上只是一个 flex 容器的东西去想一个完美抽象名称而苦恼。
+
+<br/>
+</v-click>
+<v-click>
+
+- 🛑 **CSS文件将停止增长** - 传统方式下、每次新增功能时，CSS文件体积都会增大。而使用`原子化CSS`所有的class都将被复用。
+
+<br/>
+
+</v-click>
+<v-click>
+
+<img class="mb-4 h-80" src="/assets/imgs/grow.png"/>
+
+</v-click>
+<v-click>
+
+- ⛑ **更改样式更加安全** - 传统方式下修改样式需要注意是否会影响其他组件，而`tailwindcss`就是在当前元素上添加/移除class，影响范围仅限在当前组件。
+
+</v-click>
+
+<v-click>
+
+<!-- - ⛑ **在设计规范下约束样式编写** - 使用tailwindcss是从一个预定义的设计系统中选择样式，这使开发人员更容易建立视觉上一致的UI，新人总容易弄出一种大红大绿的新人风格网页，有了一些约束就很难出现这种很糟糕的色彩控制,另外，有了 text-lg 此类，一个页面上就不会出现几十种参差不同的字体大小 -->
+
+</v-click>
+
+<br>
+<br>
+
+---
+class: flex items-center justify-center
+---
+
+# why tailwindcss
+
+---
+
+---
+layout: iframe
+# the web page source
+url: http://localhost:3000/design
+
+---
+
+---
+layout: iframe
+# the web page source
+url: http://localhost:3000/responsive
+
+---
+
+---
+layout: iframe
+# the web page source
+url: http://localhost:3000/darkmode
 
 ---
 
